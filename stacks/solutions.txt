@@ -1,0 +1,29 @@
+listA = LinkedList([4,1,8,4,5])
+listB = LinkedList([5,1,2,8,4,5])
+
+def intersectLL(a : LinkedList, b : LinkedList) :
+    da = ha = a.head
+    db = hb = b.head
+    dictt = {}
+
+    while da and db:
+        if da.next.data in dictt:
+            return da.next.data
+        dictt[da.next.data] = 1
+        
+        if db.next.data in dictt:
+            return db.next.data
+        dictt[db.next.data] = 1
+        # if da.next.data == db.next.data:
+        #     return da.next.data # 1,2,3, None
+
+        da = da.next
+        db = db.next
+
+    return 0
+
+
+print(intersectLL(listA, listB)) 
+
+
+

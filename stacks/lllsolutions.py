@@ -1,48 +1,11 @@
-# anni and nana
-
-# impl node class
-class Node: 
-    def __init__(self, data) -> None:
-        self.data = data
-        self.next = None 
-
-def __repr__(self):
-    return f'{self.data}->{self.next}'
-
-# impl linked-list class
-class LinkedList: 
-
-    def __init__(self, nodes=None) -> None:
-        self.head = None 
-        if nodes and len(nodes) == 0: 
-            return 
-        if nodes is not None: 
-            node : Node = Node(data=nodes.pop(0))
-            self.head = node 
-        
-
-            # add subsequent elements to the node. 
-            for elem in nodes: 
-                node.next = Node(data=elem)
-                node = node.next # itr over linkedlist
-    
-    def __repr__(self) -> str:
-        node = self.head
-        nodes = []
-
-        while node is not None: 
-            nodes.append(str(node.data))
-            node = node.next
-        nodes.append("None")
-        return "->".join(nodes)
 ###
-
 #.1 merging sorted linkedlists. 
 # UMPIRE
 # u -> Edge Cases:   a = ! or b = ! or a and b =null
 # m -> itr over the linkedlist and find the smallest that exists and (create new linkedlist or something else)
 # p -> use pseudocode from whiteboard.
 
+"""
 def mSort( a : LinkedList, b : LinkedList) -> LinkedList: 
 
     # edge-case
@@ -116,12 +79,8 @@ def rmvNode( a: LinkedList, idx : int) :
 #rmvNode(m, 3)
 
 
-x = rmvNode(m,3)
-# print(x)
-while x:
-    print(x.data, end=" ")
-    x = x.next
-    
+Print out the first intersection of between two-linked lists.
+If the two linked lists have no intersection at all, return null.
 
-
-
+Example : intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], Output = 8
+"""
