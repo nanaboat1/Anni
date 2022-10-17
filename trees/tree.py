@@ -1,11 +1,4 @@
-# implementation of trees
-# class TreeNode {
-#   int data;
-#   TreeNode left;
-#   TreeNode right;
-# }
-
-
+#
 class Node:
     def __init__(self, data) -> None:
         
@@ -21,21 +14,23 @@ class Node:
         return f'{self.data}'
 
     #inserting things into a tree
-    def insert(self, data):
+    def insert(self, node):
+
         if self.data:
-            if data < self.data:
+            if node < self.data:
                 #left
                 if self.left == None:
-                    self.data = Node(data)
-                else: self.left.insert(data)
-            elif data > self.data:
+                    self.left = Node(node)
+                else: self.left.insert(node)
+            elif node > self.data:
                 #right
                 if self.right == None:
-                    self.data = Node(data)
-                else: self.right.insert(data)
+                    self.right = Node(node)
+                else: self.right.insert(node)
 
         else: 
-            self.data = data  
+            self.data = node 
+        
     
     ## printing items in a tree
     def printTree(self): 
@@ -47,8 +42,24 @@ class Node:
     ## 
 
 
-# implementing the tree. 
-root = Node(8)
+class Tree: 
 
+    def __init__(self, nodes : list= []): 
+        self.root : Node = None 
+
+        if nodes and len(nodes) == 0: 
+            return 
+        if nodes is not None: 
+            node : Node = Node(data=nodes.pop(0))
+            self.root = node 
         
+
+        # add subsequent elements to the root node.
+        for elem in nodes: 
+            self.root.insert(elem)
+
+
+# implementing the tree. 
+
+a = Tree([3,4,5,6,2,1])
 

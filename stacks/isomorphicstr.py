@@ -1,4 +1,4 @@
-import stacks.linkedlist as ll
+import linkedlist.linkedlist as ll
 
 
 # Given two strings s and t, determine if they are isomorphic.
